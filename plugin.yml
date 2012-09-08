@@ -1,0 +1,5 @@
+name: ArenaRedstoneConnector
+main: de.savagecraft.ArenaRedstoneConnector.ArenaRedstoneConnector
+version: 0.1
+author: Lu1s
+depend: [WorldGuard, RedstoneChips]
