@@ -1,0 +1,43 @@
+<project name="ArenaRedstoneConnector" default="dist" basedir=".">
+	<property name="pluginname" value="ArenaRedstoneConnector"/>
+	<property name="bukkit.jar" location="../Bukkit/dist/Bukkit.jar"/>
+
+	<property name="src" location="src"/>
+	<property name="bin" location="bin"/>
+	<property name="dist" location="dist"/>
+	<property name="resources" location="resources"/>
+	
+	<path id="resourcePath">
+  		<pathelement location="${resources}/**.jar" />
+	</path>
+	
+	<target name="init">
+		<mkdir dir="${bin}"/>
+	</target>
+	
+	<target name="compile" depends="init">
+		<javac srcdir="${src}" destdir="${bin}" includeantruntime="false">
+			<classpath>
+				<pathelement location="${resources}/craftbukkit.jar"/>
+				<pathelement location="${resources}/RedstoneChips-beta.jar"/>
+				<pathelement location="${resources}/WorldGuard.jar"/>
+				<pathelement location="${resources}/WorldEdit.jar"/>
+
+			</classpath>
+		</javac>
+	</target>
+	
+	<target name="dist" depends="compile">
+		<mkdir dir="${dist}"/>
+		<jar jarfile="${dist}/${pluginname}.jar">
+		    <fileset dir="${bin}"/>
+			<fileset file="plugin.yml"/>
+			<fileset file="config.yml"/>
+		</jar>
+	</target>
+	
+	<target name="clean">
+		<delete dir="${bin}"/>
+		<delete dir="${dist}"/>
+	</target>
+</project>
