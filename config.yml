@@ -4,6 +4,10 @@ PVPArena:
     BlueChannel: 'Transmitt1'
     RedChannel: 'Transmitt2'
     ReverseChannel: 'Reverse1'
-    BlankChannel: 'Blank1'
+    FinishChannel: 'Finish1'
     ResetChannel: 'Reset1'
+    GameIsRunningChannel: 'Running1'
     WaitTimeInSeconds: 10
+MobArena:
+    RunningChannel: 'Running2'
+    NewWaveChannel: 'NewWave1'

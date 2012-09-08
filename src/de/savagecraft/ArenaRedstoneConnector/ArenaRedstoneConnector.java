@@ -7,16 +7,21 @@ import org.tal.redstonechips.RedstoneChips;
 
 public class ArenaRedstoneConnector extends JavaPlugin {
 	
-	public Listener ArenaStartListener = new de.savagecraft.ArenaRedstoneConnector.PVPArena.ArenaStartListener(this);
-	public Listener ArenaDeathListener = new de.savagecraft.ArenaRedstoneConnector.PVPArena.ArenaDeathListener(this);
-	public Listener ArenaEndListener = new de.savagecraft.ArenaRedstoneConnector.PVPArena.ArenaEndListener(this);
+
 	
 	@Override
 	public void onEnable(){
-		this.saveDefaultConfig(); 		
+		this.saveDefaultConfig();
+		
+		Listener ArenaStartListener = new de.savagecraft.ArenaRedstoneConnector.PVPArena.ArenaStartListener(this);
+		Listener ArenaDeathListener = new de.savagecraft.ArenaRedstoneConnector.PVPArena.ArenaDeathListener(this);
+		Listener ArenaEndListener = new de.savagecraft.ArenaRedstoneConnector.PVPArena.ArenaEndListener(this);
+		Listener MAEventListener = new de.savagecraft.ArenaRedstoneConnector.MobArena.MAEventListener(this);
+			
 		getServer().getPluginManager().registerEvents(ArenaStartListener, this); 
 		getServer().getPluginManager().registerEvents(ArenaDeathListener, this); 
 		getServer().getPluginManager().registerEvents(ArenaEndListener, this); 
+		getServer().getPluginManager().registerEvents(MAEventListener, this); 
 	}
 	
 	public RedstoneChips getRedstoneChips() {

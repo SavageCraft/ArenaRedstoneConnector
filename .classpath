@@ -5,5 +5,6 @@
 	<classpathentry kind="lib" path="resources/craftbukkit.jar"/>
 	<classpathentry kind="lib" path="resources/RedstoneChips-beta.jar"/>
 	<classpathentry kind="lib" path="resources/pvparena.jar"/>
+	<classpathentry kind="lib" path="resources/MobArena.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -37,6 +37,9 @@ public class ArenaStartListener implements Listener {
 				Main.getLogger().info("Unkown Team: " + t.getName());
 			}
 		}
+		Main.getRedstoneChips().getChannelManager().getChannelByName(config.getString("PVPArena.GameIsRunningChannel"), false).transmit(true, 0);
+		BroadcastChannel ReverseChannel = Main.getRedstoneChips().getChannelManager().getChannelByName(config.getString("PVPArena.ReverseChannel"), false);
+		ReverseChannel.transmit(true, 0);
 		BroadcastChannel BlueChannel = Main.getRedstoneChips().getChannelManager().getChannelByName(config.getString("PVPArena.BlueChannel"), false);
 		for (int i = 0; i < BluePlayers; i++){
 			BlueChannel.transmit(true, 0);
@@ -47,6 +50,6 @@ public class ArenaStartListener implements Listener {
 			RedChannel.transmit(true, 0);
 			RedChannel.transmit(false, 0);
 		}
-		Main.getRedstoneChips().getChannelManager().getChannelByName(config.getString("PVPArena.ReverseChannel"), false).transmit(true, 0);
+		ReverseChannel.transmit(false, 0);
 	}
 }

@@ -20,16 +20,17 @@ public class ArenaEndListener implements Listener {
 	@EventHandler
 	public void onArenaEnd(PAEndEvent e) {
 		final FileConfiguration config = Main.getConfig();
-		final BroadcastChannel BlankChannel = Main.getRedstoneChips().getChannelManager().getChannelByName(config.getString("PVPArena.BlankChannel"), false);
+		final BroadcastChannel FinishChannel = Main.getRedstoneChips().getChannelManager().getChannelByName(config.getString("PVPArena.FinishChannel"), false);
 		final BroadcastChannel ResetChannel = Main.getRedstoneChips().getChannelManager().getChannelByName(config.getString("PVPArena.ResetChannel"), false);
-		BlankChannel.transmit(true, 0);		
+		FinishChannel.transmit(true, 0);		
 		
 		Main.getServer().getScheduler().scheduleSyncDelayedTask(Main, new Runnable() {
 			   public void run() {				   
-				   BlankChannel.transmit(false, 0);
-				   Main.getRedstoneChips().getChannelManager().getChannelByName(config.getString("PVPArena.ReverseChannel"), false).transmit(false, 0);
+				   FinishChannel.transmit(false, 0);
+				   Main.getRedstoneChips().getChannelManager().getChannelByName(config.getString("PVPArena.ReverseChannel"), false).transmit(true, 0);
 				   ResetChannel.transmit(true, 0);
 				   ResetChannel.transmit(false, 0);
+				   Main.getRedstoneChips().getChannelManager().getChannelByName(config.getString("PVPArena.GameIsRunningChannel"), false).transmit(false, 0);
 			   }
 			}, (config.getLong("PVPArena.WaitTimeInSeconds")*20L));
 		
