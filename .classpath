@@ -4,7 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="resources/craftbukkit.jar"/>
 	<classpathentry kind="lib" path="resources/RedstoneChips-beta.jar"/>
-	<classpathentry kind="lib" path="resources/WorldEdit.jar"/>
-	<classpathentry kind="lib" path="resources/WorldGuard.jar"/>
+	<classpathentry kind="lib" path="resources/pvparena.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,4 +1,9 @@
 PVPArena:
-    RegionName: 'PVPArena'
+    BlueTeamName: 'Blue'
+    RedTeamName: 'Red'
     BlueChannel: 'Transmitt1'
     RedChannel: 'Transmitt2'
+    ReverseChannel: 'Reverse1'
+    BlankChannel: 'Blank1'
+    ResetChannel: 'Reset1'
+    WaitTimeInSeconds: 10
