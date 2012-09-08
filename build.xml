@@ -20,9 +20,7 @@
 			<classpath>
 				<pathelement location="${resources}/craftbukkit.jar"/>
 				<pathelement location="${resources}/RedstoneChips-beta.jar"/>
-				<pathelement location="${resources}/WorldGuard.jar"/>
-				<pathelement location="${resources}/WorldEdit.jar"/>
-
+				<pathelement location="${resources}/pvparena.jar"/>
 			</classpath>
 		</javac>
 	</target>
