@@ -23,29 +23,29 @@ public class MAEventListener implements Listener{
 	
 	@EventHandler
 	public void onArenaStart(ArenaStartEvent e){
-		if (e.getArena().configName().equalsIgnoreCase(config.getString("MobArena1.ArenaName"))) {
+		if (e.getArena().arenaName().equalsIgnoreCase(config.getString("MobArena1.ArenaName"))) {
 			Main.getRedstoneChips().getChannelManager().getChannelByName(config.getString("MobArena1.RunningChannel"), false).transmit(true, 0);
-		} else if (e.getArena().configName().equalsIgnoreCase(config.getString("MobArena2.ArenaName"))){
+		} else if (e.getArena().arenaName().equalsIgnoreCase(config.getString("MobArena2.ArenaName"))){
 			Main.getRedstoneChips().getChannelManager().getChannelByName(config.getString("MobArena2.RunningChannel"), false).transmit(true, 0);
 		}
 	}
 	
 	@EventHandler
 	public void onArenaEnd(ArenaEndEvent e){
-		if (e.getArena().configName().equalsIgnoreCase(config.getString("MobArena1.ArenaName"))) {
+		if (e.getArena().arenaName().equalsIgnoreCase(config.getString("MobArena1.ArenaName"))) {
 			Main.getRedstoneChips().getChannelManager().getChannelByName(config.getString("MobArena1.RunningChannel"), false).transmit(false, 0);
-		} else if (e.getArena().configName().equalsIgnoreCase(config.getString("MobArena2.ArenaName"))){
+		} else if (e.getArena().arenaName().equalsIgnoreCase(config.getString("MobArena2.ArenaName"))){
 			Main.getRedstoneChips().getChannelManager().getChannelByName(config.getString("MobArena2.RunningChannel"), false).transmit(false, 0);
 		}
 	}
 	
 	@EventHandler
 	public void onNewWave(NewWaveEvent e){
-		if (e.getArena().configName().equalsIgnoreCase(config.getString("MobArena1.ArenaName"))) {
+		if (e.getArena().arenaName().equalsIgnoreCase(config.getString("MobArena1.ArenaName"))) {
 			BroadcastChannel NewWaveChannel = Main.getRedstoneChips().getChannelManager().getChannelByName(config.getString("MobArena1.NewWaveChannel"), false);
 			NewWaveChannel.transmit(true, 0);
 			NewWaveChannel.transmit(false, 0);
-		} else if (e.getArena().configName().equalsIgnoreCase(config.getString("MobArena2.ArenaName"))){
+		} else if (e.getArena().arenaName().equalsIgnoreCase(config.getString("MobArena2.ArenaName"))){
 			BroadcastChannel NewWaveChannel = Main.getRedstoneChips().getChannelManager().getChannelByName(config.getString("MobArena2.NewWaveChannel"), false);
 			NewWaveChannel.transmit(true, 0);
 			NewWaveChannel.transmit(false, 0);
