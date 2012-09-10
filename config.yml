@@ -8,6 +8,11 @@ PVPArena:
     ResetChannel: 'Reset1'
     GameIsRunningChannel: 'Running1'
     WaitTimeInSeconds: 10
-MobArena:
+MobArena1:
+    ArenaName: 'MobArena1'
     RunningChannel: 'Running2'
     NewWaveChannel: 'NewWave1'
+MobArena2:
+    ArenaName: 'MobArena2'
+    RunningChannel: 'Running3'
+    NewWaveChannel: 'NewWave2'
